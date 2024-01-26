@@ -165,6 +165,7 @@ public class ZStack: UIView, StackUIView {
         case topTrailing
         case bottomLeading
         case bottomTrailing
+        case centerFull
     }
     
     public let alignment: Alignment
@@ -228,6 +229,13 @@ public class ZStack: UIView, StackUIView {
                 NSLayoutConstraint.activate([
                     view.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: view.offset.x),
                     view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: view.offset.y)
+                ])
+            case .centerFull:
+                NSLayoutConstraint.activate([
+                    view.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: view.offset.x),
+                    view.topAnchor.constraint(equalTo: self.topAnchor, constant: view.offset.y),
+                    view.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: view.offset.y),
+                    view.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: view.offset.x)
                 ])
             }
         }
