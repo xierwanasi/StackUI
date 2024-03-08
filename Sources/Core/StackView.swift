@@ -138,7 +138,7 @@ open class VScrollStack: UIView, StackUIView {
         stackView.spacing = spacing
         super.init(frame: .zero)
         
-        scrollView.embed(in: self)
+        scrollView.embed(in: self, ignoreSafeArea: true)
         stackView.embed(in: scrollView, ignoreSafeArea: true)
         stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
     }
